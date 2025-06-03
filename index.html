@@ -1,114 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
   <title>GA Cyber Tutor - Learn Tech Skills</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Navbar feedback button style */
+    nav a.feedback-btn {
+      background-color: #007bff;
+      color: white !important;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-left: 15px;
+    }
+
+    nav a.feedback-btn:hover {
+      background-color: #0056b3;
+      color: white !important;
+    }
+
+    /* Feedback Slider Styles */
+    .feedback-slider {
+      width: 400px;
+      margin: 40px auto 60px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .slide {
+      display: none;
+      padding: 30px 20px 40px 20px;
+      height: 200px;
+      position: relative;
+      text-align: center;
+      color: #333;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .username {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-weight: 700;
+      font-size: 16px;
+      color: #555;
+      user-select: none;
+    }
+
+    .feedback-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 18px;
+      line-height: 1.4;
+      padding: 0 20px;
+      font-style: italic;
+      color: #222;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #007bff;
+      border: none;
+      color: white;
+      padding: 10px 14px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: #0056b3;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    @media (max-width: 450px) {
+      .feedback-slider {
+        width: 90vw;
+      }
+      .feedback-text {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>GA Cyber Tutor</h1>
     <nav>
       <a href="#home">Home</a>
-      <a href="#courses">Courses</a>
       <a href="#about">About</a>
+      <a href="#courses">Courses</a>
       <a href="#footer">Contact</a>
-    
+      <a href="#feedback">Feedback</a>
     </nav>
   </header>
 
   <section id="home" class="hero">
     <h2>Master IT Skills & Transform Your Career 🚀</h2>
-    <p>Learn coding, cybersecurity, cloud, blockchain, & more industry certified courses.</p>
+    <p>
+      Learn coding, cybersecurity, cloud, blockchain, & more industry
+      certified courses.
+    </p>
     <a href="#courses" class="btn">Explore Courses</a>
   </section>
 
+  <!-- About Us Section (First) -->
+  <section id="about" class="about">
+    <h2>About GA Cyber Tutor</h2>
+    <p>At GA Cyber Tutor, we believe education has the power to transform lives.</p>
+    <p>
+      Founded in 2023, GA Cyber Tutor was created to bridge the gap between
+      college education and industry needs.
+    </p>
+    <p>
+      We provide affordable, high-quality tech education focused on real-world
+      skills.
+    </p>
+    <p>
+      At GA Cyber Tutor we don't just teach we transform careers! Our Industry
+      Certified Courses are crafted to equip you with the exact skills
+      companies are hunting for.
+    </p>
+    <p>
+      Whether you're a beginner or aiming to become an expert, our programs are
+      designed to take you from the basics to mastery.
+    </p>
+    <p>
+      Learn job-ready skills, earn your certifications, and build a powerful
+      career — 100% online, anytime, anywhere.
+    </p>
+    <p>Your journey to success starts right here, right now!</p>
+  </section>
+
+  <!-- Courses Section (Next) -->
   <section id="courses" class="courses">
     <h2>Our Courses</h2>
     <div class="course-list">
       <div class="course-card">
         <h3>Ethical Hacking</h3>
-        <p>Learn Ethical Hacking skills from basics to advanced with real-world applications and certifications.</p>
-        <a href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20Ethical%20Hacking" class="enroll-button"target="_blank">Enroll Now</a>
+        <p>
+          Learn Ethical Hacking skills from basics to advanced with real-world
+          applications and certifications.
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20Ethical%20Hacking"
+          class="enroll-button"
+          target="_blank"
+          >Enroll Now</a
+        >
       </div>
       <div class="course-card">
         <h3>Linux Mastery</h3>
-        <p>Master Linux fundamentals, system administration, and security for cybersecurity and server management.</p>
-        <a href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20linux%20mastery" class="enroll-button"target="_blank">Enroll Now</a>
+        <p>
+          Master Linux fundamentals, system administration, and security for
+          cybersecurity and server management.
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20linux%20mastery"
+          class="enroll-button"
+          target="_blank"
+          >Enroll Now</a
+        >
       </div>
       <div class="course-card">
         <h3>Penetration Testing</h3>
-        <p>Practical Pen Testing techniques, exploitation methods, and advanced vulnerability assessments.</p>
-        <a href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20Penetration%20Testing" class="enroll-button"target="_blank">Enroll Now</a>
+        <p>
+          Practical Pen Testing techniques, exploitation methods, and advanced
+          vulnerability assessments.
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20Penetration%20Testing"
+          class="enroll-button"
+          target="_blank"
+          >Enroll Now</a
+        >
       </div>
       <div class="course-card">
         <h3>Networking Essentials</h3>
-        <p>Understand Networking concepts, protocols, and security fundamentals essential for any IT career.</p>
-        <a href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20Network%20Essentials" class="enroll-button" target="_blank" >Enroll Now</a>
+        <p>
+          Understand Networking concepts, protocols, and security fundamentals
+          essential for any IT career.
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=919962799568&text=I%20Like%20To%20Enroll%20Network%20Essentials"
+          class="enroll-button"
+          target="_blank"
+          >Enroll Now</a
+        >
       </div>
     </div>
   </section>
-  
-  <style>
 
-  </style>
-  
-  
+  <!-- Feedback slider section (After courses) -->
+  <section id="feedback" class="feedback-slider" aria-label="User Feedback Slider">
+    <div class="slide active">
+      <div class="username">Alice</div>
+      <div class="feedback-text">
+        This platform completely transformed how I learn coding. Highly
+        recommend!
+      </div>
+    </div>
+    <div class="slide">
+      <div class="username">Bob</div>
+      <div class="feedback-text">
+        The interactive challenges make learning so much fun and effective.
+      </div>
+    </div>
+    <div class="slide">
+      <div class="username">Charlie</div>
+      <div class="feedback-text">
+        I improved my cybersecurity skills and feel more confident online now!
+      </div>
+    </div>
 
-  <section id="about" class="about">
-    <h2>About GA Cyber Tutor</h2>
-    <p>At GA Cyber Tutor, we believe education has the power to transform lives.</p>
-    <p>Founded in 2023, GA Cyber Tutor was created to bridge the gap between college education and industry needs. </p>
-    <p>We provide affordable, high-quality tech education focused on real-world skills.</p>
-    <p>At GA Cyber Tutor we don't just teach we transform careers! Our Industry Certified Courses are crafted to equip you with the exact skills companies are hunting for.</p>
-    <p>Whether you're a beginner or aiming to become an expert, our programs are designed to take you from the basics to mastery.</p>
-    <p>Learn job-ready skills, earn your certifications, and build a powerful career — 100% online, anytime, anywhere.</p>
-    <p>Your journey to success starts right here, right now!</p>
+    <button class="nav-btn prev-btn" aria-label="Previous feedback">&#10094;</button>
+    <button class="nav-btn next-btn" aria-label="Next feedback">&#10095;</button>
   </section>
-  
-    <footer id="footer" style="background-color: #0a1931, #185adb; color: #ffffff; padding: 40px 20px; text-align: center;">
-  
-      <!-- Contact Info Centered -->
-      <div style="margin-bottom: 20px;">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:itscybertutor@gmail.com" style="color: #ffffff;">itscybertutor@gmail.com</a></p>
-        <p>Phone: <a href="tel:+91 9962799568" style="color: #ffffff;">+91 9962799568</a></p>
-      </div>
-    
-      <!-- Social Media Icons -->
-      <div style="margin-bottom: 30px;">
-        <a href="https://facebook.com" target="_blank" style="margin: 0 10px; color: #ffffff; font-size: 24px;">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://instagram.com/" target="_blank" style="margin: 0 10px; color: #ffffff; font-size: 24px;">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" style="margin: 0 10px; color: #ffffff; font-size: 24px;">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://discord.com" target="_blank" style="margin: 0 10px; color: #ffffff; font-size: 24px;">
-          <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://telegram.org" target="_blank" style="margin: 0 10px; color: #ffffff; font-size: 24px;">
-          <i class="fab fa-telegram"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #ffffff; font-size: 24px;">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-      </div>
-    
-      <!-- Legal Links Right Side -->
-      <div style="margin-top: 20px;">
-        <a href="privacy-policy.html" style="margin: 0 15px; color: #ffffff;">Privacy Policy</a> |
-        <a href="terms-of-use.html" style="margin: 0 15px; color: #ffffff;">Terms of Use</a> |
-        <a href="refund-policy.html" style="margin: 0 15px; color: #ffffff;">Refund Policy</a>
-      </div>
-    <br>    
-    <p>© 2025 GA Cyber Tutor. Your Road To Excellence.</p>
+
+  <footer
+    id="footer"
+    style="
+      background-color: #0a1931, #185adb;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    "
+  >
+    <!-- Contact Info Centered -->
+    <div style="margin-bottom: 20px;">
+      <h2>Contact Us</h2>
+      <p>
+        Email:
+        <a href="mailto:itscybertutor@gmail.com" style="color: #ffffff"
+          >itscybertutor@gmail.com</a
+        >
+      </p>
+      <p>
+        Phone:
+        <a href="tel:+91 9962799568" style="color: #ffffff">+91 9962799568</a>
+      </p>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div style="margin-bottom: 30px;">
+      <a
+        href="https://facebook.com"
+        target="_blank"
+        style="margin: 0 10px; color: #ffffff; font-size: 24px"
+      >
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a
+        href="https://instagram.com/"
+        target="_blank"
+        style="margin: 0 10px; color: #ffffff; font-size: 24px"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://twitter.com/"
+        target="_blank"
+        style="margin: 0 10px; color: #ffffff; font-size: 24px"
+      >
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a
+        href="https://linkedin.com/"
+        target="_blank"
+        style="margin: 0 10px; color: #ffffff; font-size: 24px"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+
+    <p>&copy; 2023 GA Cyber Tutor. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Feedback slider functionality
+    const slides = document.querySelectorAll(".feedback-slider .slide");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    // Optional: Auto slide every 5 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+  </script>
 </body>
 </html>
